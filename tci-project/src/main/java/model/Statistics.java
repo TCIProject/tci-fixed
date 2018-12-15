@@ -23,7 +23,7 @@ public class Statistics {
 
     public int getNrOfpagesExplored()
     {
-        return nrOfPagesExplored; 
+        return nrOfPagesExplored;
     }
 
     public double getTimeElapsed()

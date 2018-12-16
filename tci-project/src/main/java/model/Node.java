@@ -9,8 +9,13 @@ public class Node {
     private String JSONString;
     private String URLLink;
 
-    public Node(boolean isVisited, Node parent, String JSONString, String URLLink) {
-        this.isVisited = isVisited;
+    public Node(Node parent, String URLLink) {
+        this.parent = parent;
+        this.URLLink = URLLink;
+    }
+
+    public Node(Node parent, String JSONString, String URLLink) {
+        this.isVisited = false;
         this.parent = parent;
         this.JSONString = JSONString;
         this.URLLink = URLLink;

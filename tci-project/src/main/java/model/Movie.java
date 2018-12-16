@@ -2,13 +2,13 @@ package model;
 
 public class Movie extends Item {
     private String director;
-    private String[] writes;
+    private String[] writers;
     private String[] stars;
 
-    public Movie(String genre, String format, int date, String director, String[] writes, String[] stars) {
+    public Movie(String genre, String format, int date, String director, String[] writers, String[] stars) {
         super(genre, format, date);
         this.director = director;
-        this.writes = writes;
+        this.writers = writers;
         this.stars = stars;
     }
 
@@ -20,12 +20,12 @@ public class Movie extends Item {
         this.director = director;
     }
 
-    public String[] getWrites() {
-        return writes;
+    public String[] getWriters() {
+        return writers;
     }
 
-    public void setWrites(String[] writes) {
-        this.writes = writes;
+    public void setWriters(String[] writes) {
+        this.writers = writers;
     }
 
     public String[] getStars() {

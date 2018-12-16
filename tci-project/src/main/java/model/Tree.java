@@ -19,7 +19,7 @@ public class Tree {
 
     /**
      * @param node The tree will be constructed by passing a
-     *             Node to the method
+     *             Book to the method
      *
      */
     public void buildTree(Node node) {

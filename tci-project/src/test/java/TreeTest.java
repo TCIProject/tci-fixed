@@ -12,7 +12,6 @@ public class TreeTest {
     private Node root;
     private Tree tree;
 
-
     @Before
     public void setup() {
         // arrange
@@ -21,7 +20,8 @@ public class TreeTest {
     }
 
     /**
-     * Test to create simple tree
+     * Test to create simple tree input and
+     * output 1
      */
     @Test
     public void creatTreeNode() {
@@ -32,7 +32,7 @@ public class TreeTest {
     }
 
     /**
-     * Test to add child in tree
+     * Test to add child in tree input and output 2
      */
     @Test
     public void addChildInTree() {
@@ -46,6 +46,7 @@ public class TreeTest {
 
     /**
      * See if the node has been found thanks to the url
+     * input and output
      */
     @Test
     public void testDFSforFoundNode() {
@@ -59,11 +60,6 @@ public class TreeTest {
         }
         // assert
         Assert.assertEquals(root,foundnode);
-    }
-
-    @Test
-    public void testPhase() {
-
     }
 
 }

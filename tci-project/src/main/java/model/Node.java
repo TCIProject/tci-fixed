@@ -37,10 +37,6 @@ public class Node {
         this.nodes = nodes;
     }
 
-    /**
-     * @param JSONString The json parameter string will get the input of book,music or movie
-     *                   and save it as a json in the node class
-     */
     public void setJSONString(String JSONString) {
         this.JSONString = JSONString;
     }

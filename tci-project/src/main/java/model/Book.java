@@ -1,5 +1,8 @@
 package model;
 
+/**
+ * This is a book model class to serialize it JSON
+ */
 public class Book {
     private String[] authors;
     private String publisher;

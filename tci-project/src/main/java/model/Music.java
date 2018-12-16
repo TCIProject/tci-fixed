@@ -1,5 +1,8 @@
 package model;
 
+/**
+ * This is a movie model class to serialize it JSON
+ */
 public class Music extends Item {
     private String artist;
 

@@ -1,6 +1,10 @@
 package model;
 
-public class Item {
+/**
+ * This class is a abstract class which will
+ * contain items of Movie and Music and Tree
+ */
+public abstract class Item {
     private String genre;
     private String format;
     private int date;

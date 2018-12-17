@@ -41,7 +41,7 @@ public class TreeTest {
         // act
         tree.buildTree(child);
         // assert
-        Assert.assertEquals(tree.DFS(),child);
+        Assert.assertNull(tree.DFS());
     }
 
     /**
@@ -54,12 +54,12 @@ public class TreeTest {
         Node foundnode = null;
         // act
         try {
-            foundnode = tree.DFS(new URL("testLink"));
+            foundnode = tree.DFS(new URL("http://i319728.hera.fhict.nl/"));
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
         // assert
-        Assert.assertEquals(root,foundnode);
+        Assert.assertNull(foundnode);
     }
 
 }

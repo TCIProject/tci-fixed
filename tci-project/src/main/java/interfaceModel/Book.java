@@ -1,13 +1,17 @@
 package interfaceModel;
 
+import java.util.ArrayList;
+
 /**
  * Interface for testing purposes
  */
 public interface Book {
 
-    String[] getAuthors();
+    public String getJSON();
 
-    void setAuthors(String[] authors);
+    ArrayList<String> getAuthors();
+
+    void setAuthors(ArrayList<String> authors);
 
     String getPublisher();
 

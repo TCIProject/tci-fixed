@@ -4,7 +4,7 @@ import com.google.gson.Gson;
 
 import java.util.ArrayList;
 
-public class Movie extends Item {
+public class Movie extends Item implements interfaceModel.Movie {
     private String director;
     private ArrayList<String> writers;
     private ArrayList<String> stars;

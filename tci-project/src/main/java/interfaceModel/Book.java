@@ -7,7 +7,7 @@ import java.util.ArrayList;
  */
 public interface Book {
 
-    public String getJSON();
+    String getJSON();
 
     ArrayList<String> getAuthors();
 

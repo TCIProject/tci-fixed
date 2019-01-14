@@ -7,7 +7,7 @@ import java.util.ArrayList;
 /**
  * This is a Book model class to serialize it JSON
  */
-public class Book extends Item implements interfaceModel.Book {
+public class Book extends Item {
     private ArrayList<String> authors;
     private String publisher;
     private String ISBN;

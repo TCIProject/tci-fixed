@@ -21,10 +21,10 @@ public class Music extends Item {
         super(id, depth, pagesVisited, timeElapsed, title, category);
     }
 
-//    public Music(int id, String title, Category category, String genre, String format, int year, String artist) {
-//        super(id, title,category,genre,format,year);
-//        this.artist = artist;
-//    }
+    public Music(int id, int depth, int pagesVisited, long timeElapsed, String title, Category category, String genre, String format, int year, String artist) {
+        super(id, depth, pagesVisited, timeElapsed, title, category, genre, format, year);
+        this.artist = artist;
+    }
 
 //    public Music() {
 //    }
@@ -46,7 +46,7 @@ public class Music extends Item {
         return gson.toJson(this, Music.class);
     }
 
-//    public String getArtist() {
-//        return artist;
-//    }
+    public String getArtist() {
+        return artist;
+    }
 }

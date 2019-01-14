@@ -60,5 +60,4 @@ public class BookTest {
         assertSame(book.getISBN(), isbn);
         assertSame(book.getAuthors(), array);
     }
-
 }

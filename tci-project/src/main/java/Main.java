@@ -3,7 +3,7 @@
 //import java.net.MalformedURLException;
 //import java.net.URL;
 //
-//public class Main {
+public class Main {
 //
 //    public static void main(String[] args) throws MalformedURLException {
 //        WebCrawler crawler = new WebCrawler(new URL("http://i319728.hera.fhict.nl/"));
@@ -14,4 +14,4 @@
 //        System.out.println("Music");
 //        crawler.getMusic();
 //    }
-//}
+}

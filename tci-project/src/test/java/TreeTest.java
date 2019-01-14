@@ -6,7 +6,7 @@
 //import java.net.MalformedURLException;
 //import java.net.URL;
 //
-//public class TreeTest {
+public class TreeTest {
 //
 //    private Node root;
 //    private Tree tree;
@@ -61,4 +61,4 @@
 //        Assert.assertNull(foundnode);
 //    }
 //
-//}
+}

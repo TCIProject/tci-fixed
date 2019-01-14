@@ -1,9 +1,9 @@
-//package model;
+package model;
 //
 ///**
 // * This class will keep track of the statistics
 // */
-//public class Statistics {
+public class Statistics {
 //    private String algorithmUsed;
 //    private double timeElapsed;
 //    private int nrOfPagesExplored;
@@ -51,5 +51,4 @@
 //    public void setSearchDepth(int searchDepth) {
 //        this.searchDepth = searchDepth;
 //    }
-//}
-//
+}

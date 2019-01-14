@@ -32,8 +32,23 @@ public class WebCrawlerTest {
     }
 
     @Test
-    public void testWebCrawlerReturnMusic() {
+    public void testWebCrawlerReturnMusicWithId() {
+        Assert.assertNull(crawler.getMusic(101));
+    }
+
+    @Test
+    public void testWebCrawlerReturnMusicWithGenre() {
         Assert.assertEquals(crawler.getMusic(304)+'\n',crawler.getBasedOnGenre("jaz"));
+    }
+
+    @Test
+    public void testWebCrawlerReturnMovieWithGenre() {
+        Assert.assertEquals(crawler.getMovie(202)+'\n' + crawler.getMovie(204) + '\n',crawler.getBasedOnGenre("comedy"));
+    }
+
+    @Test
+    public void testWebCrawlerReturnBookWithGenre() {
+        Assert.assertEquals(crawler.getBook(104)+'\n' + crawler.getBook(103)+'\n' + crawler.getBook(102) + '\n' + crawler.getBook(101)+'\n',crawler.getBasedOnGenre("tech"));
     }
 
     @Test

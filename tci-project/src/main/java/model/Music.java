@@ -17,8 +17,8 @@ public class Music extends Item {
 //        this.artist = artist;
 //    }
 
-    public Music(int id, String title, Category category) {
-        super(id, title, category);
+    public Music(int id, int depth, int pagesVisited, long timeElapsed, String title, Category category) {
+        super(id, depth, pagesVisited, timeElapsed, title, category);
     }
 
 //    public Music() {

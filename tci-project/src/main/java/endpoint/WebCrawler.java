@@ -15,6 +15,9 @@ import static java.lang.Integer.parseInt;
 public class WebCrawler {
     private final Set<URL> links;
     private final long startTime;
+    private long timeElapsed;
+    private int depth;
+    private int pagesVisited;
     private ArrayList<Node> books = new ArrayList<>();
     private ArrayList<Node> music = new ArrayList<>();
     private ArrayList<Node> movies = new ArrayList<>();
@@ -25,6 +28,8 @@ public class WebCrawler {
         this.links = new HashSet<>();
         Book book =new Book();
         this.startTime = System.currentTimeMillis();
+        depth = 0;
+        pagesVisited = 0;
         crawl(initURLS(startURL));
         try {
             goThroughLinks();
@@ -35,15 +40,19 @@ public class WebCrawler {
 
     private void goThroughLinks() throws IOException {
         for (URL link :links) {
+            pagesVisited++;
             Node node;
             if (link.toString().contains("?id=1") && !books.contains(link)) {
                 node = populateNode(link);
+                depth = 2;
                 books.add(node);
             } else if (link.toString().contains("?id=2") && !movies.contains(link)) {
                 node = populateNode(link);
+                depth = 2;
                 movies.add(node);
             } else if (link.toString().contains("?id=3") && !music.contains(link)) {
                 node = populateNode(link);
+                depth = 2;
                 music.add(node);
             }
         }
@@ -59,6 +68,8 @@ public class WebCrawler {
         Node node = new Node();
         item.setTitle(title);
         item.setId(id);
+        item.setDepth(depth);
+
         for (Element tableElement: tableElements) {
             String tableHeader = tableElement.select("th").first().text();
             String tableData = tableElement.select("td").first().text();
@@ -67,13 +78,13 @@ public class WebCrawler {
                 item.setCategory(cat);
                 switch (cat) {
                     case Books:
-                        item = new Book(id, title,cat);
+                        item = new Book(id, depth, pagesVisited, timeElapsed, title, cat);
                         break;
                     case Movies:
-                        item = new Movie(id, title,cat);
+                        item = new Movie(id, depth, pagesVisited, timeElapsed, title, cat);
                         break;
                     case Music:
-                        item = new Music(id, title,cat);
+                        item = new Music(id, depth, pagesVisited, timeElapsed, title, cat);
                         break;
                 }
                 continue;
@@ -110,6 +121,9 @@ public class WebCrawler {
                 node = new Node(url,item);
             }
         }
+        timeElapsed = System.currentTimeMillis() - startTime;
+        item.setTimeElapsed(timeElapsed);
+        item.setPagesVisited(pagesVisited);
         return node;
     }
 
@@ -231,11 +245,4 @@ public class WebCrawler {
     private Set<URL> initURLS(final URL startURL){
         return Collections.singleton(startURL);
     }
-
-//    public ArrayList<Statistics>setStatistics(URL url){
-//        ArrayList<Statistics> statistics = new ArrayList<>();
-//        long startTime = System.currentTimeMillis();
-//
-//        return statistics;
-//    }
 }

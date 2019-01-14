@@ -19,8 +19,8 @@ public class Book extends Item {
 //        this.ISBN = ISBN;
 //    }
 
-    public Book(int id, String title, Category category) {
-        super(id, title, category);
+    public Book(int id, int depth, int pagesVisited, long timeElapsed, String title, Category category) {
+        super(id, depth, pagesVisited, timeElapsed, title, category);
     }
 
     public Book() {

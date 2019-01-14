@@ -6,14 +6,20 @@ package model;
  */
 public class Item {
     private int id;
+    private int depth;
+    private int pagesVisited;
+    private long timeElapsed;
     private String title;
     private Category category;
     private String genre;
     private String format;
     private int year;
 
-//    public Item(int id, String title, Category category, String genre, String format, int year) {
+//    public Item(int id, int depth, int pagesVisited, long timeElapsed, String title, Category category, String genre, String format, int year) {
 //        this.id = id;
+//        this.depth = depth;
+//        this.pagesVisited = pagesVisited;
+//        this.timeElapsed = timeElapsed;
 //        this.title = title;
 //        this.category = category;
 //        this.genre = genre;
@@ -21,17 +27,20 @@ public class Item {
 //        this.year = year;
 //    }
 
-    public Item(int id, String title, Category category) {
+    public Item(int id, int depth, int pagesVisited, long timeElapsed, String title, Category category) {
         this.id = id;
+        this.depth = depth;
+        this.pagesVisited = pagesVisited;
+        this.timeElapsed = timeElapsed;
         this.title = title;
         this.category = category;
     }
 
     public Item() {}
 
-//    public String getTitle() {
-//        return title;
-//    }
+    public String getTitle() {
+        return title;
+    }
 //
 //    public int getId() {
 //        return id;
@@ -53,9 +62,9 @@ public class Item {
         this.category = category;
     }
 
-//    public String getGenre() {
-//        return genre;
-//    }
+    public String getGenre() {
+        return genre;
+    }
 
     public void setGenre(String genre) {
         this.genre = genre;
@@ -75,5 +84,29 @@ public class Item {
 
     public void setYear(int year) {
         this.year = year;
+    }
+
+    public int getDepth() {
+        return depth;
+    }
+
+    public void setDepth(int depth) {
+        this.depth = depth;
+    }
+
+    public int getPagesVisited() {
+        return pagesVisited;
+    }
+
+    public void setPagesVisited(int pagesVisited) {
+        this.pagesVisited = pagesVisited;
+    }
+
+    public long getTimeElapsed() {
+        return timeElapsed;
+    }
+
+    public void setTimeElapsed(long timeElapsed) {
+        this.timeElapsed = timeElapsed;
     }
 }

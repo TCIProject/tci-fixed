@@ -16,8 +16,8 @@ public class Movie extends Item {
 //        this.stars = stars;
 //    }
 
-    public Movie(int id, String title, Category category) {
-        super(id, title, category);
+    public Movie(int id, int depth, int pagesVisited, long timeElapsed, String title, Category category) {
+        super(id, depth, pagesVisited, timeElapsed, title, category);
     }
 
 //    public Movie() {

@@ -187,6 +187,47 @@ public class WebCrawler {
         return json.toString();
     }
 
+    public String getBasedOnName(String name) {
+        StringBuilder json = new StringBuilder();
+        for (Node node: books) {
+            if (node.getItem().getTitle().equals(name)) {
+                json.append(((Book)node.getItem()).getJSON()).append("\n");
+            }
+        }
+        for (Node node: music) {
+            if (node.getItem().getTitle().equals(name)) {
+                json.append(((Music)node.getItem()).getJSON()).append("\n");
+            }
+        }
+        for (Node node: movies) {
+            if (node.getItem().getTitle().equals(name)) {
+                json.append(((Movie)node.getItem()).getJSON()).append("\n");
+            }
+        }
+        return json.toString();
+    }
+
+    public String getBasedOnGenre(String genre) {
+        String cap = genre.substring(0, 1).toUpperCase() + genre.substring(1);
+        StringBuilder json = new StringBuilder();
+        for (Node node: books) {
+            if (node.getItem().getGenre().equals(cap)) {
+                json.append(((Book)node.getItem()).getJSON()).append("\n");
+            }
+        }
+        for (Node node: music) {
+            if (node.getItem().getGenre().equals(cap)) {
+                json.append(((Music)node.getItem()).getJSON()).append("\n");
+            }
+        }
+        for (Node node: movies) {
+            if (node.getItem().getGenre().equals(cap)) {
+                json.append(((Movie)node.getItem()).getJSON()).append("\n");
+            }
+        }
+        return json.toString();
+    }
+
     private Set<URL> initURLS(final URL startURL){
         return Collections.singleton(startURL);
     }

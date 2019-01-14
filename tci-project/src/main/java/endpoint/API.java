@@ -32,7 +32,9 @@ public class API {
     @Produces(MediaType.TEXT_PLAIN)
     public String getMusic(@PathParam("id") int id) {
         String music = webCrawler.getMusic(id);
-        return music;
+        if (music != null)
+            return music;
+        else return "EmptyPage";
     }
 
     @GET
@@ -40,7 +42,9 @@ public class API {
     @Produces(MediaType.TEXT_PLAIN)
     public String getMovie(@PathParam("id") int id) {
         String movie = webCrawler.getMovie(id);
-        return movie;
+        if (movie != null)
+            return movie;
+        else return "EmptyPage";
     }
 
     @GET
@@ -48,28 +52,58 @@ public class API {
     @Produces(MediaType.TEXT_PLAIN)
     public String getBook(@PathParam("id") int id) {
         String book = webCrawler.getBook(id);
-        return book;
+        if (book != null)
+            return book;
+        else return "EmptyPage";
     }
 
     @GET
     @Path("book")
     @Produces(MediaType.TEXT_PLAIN)
     public String getBooks() {
-        return webCrawler.getBooks();
+        String json =  webCrawler.getBooks();
+        if (json != null)
+            return json;
+        else return "EmptyPage";
     }
 
     @GET
     @Path("music")
     @Produces(MediaType.TEXT_PLAIN)
-    public String getMusic() {
-        return webCrawler.getMusic();
+    public String getMusic() throws Exception {
+        String json = webCrawler.getMusic();
+        if (json != null)
+            return json;
+        else return "EmptyPage";
     }
 
     @GET
     @Path("movie")
     @Produces(MediaType.TEXT_PLAIN)
     public String getMovie() {
-        return webCrawler.getMovies();
+        String json = webCrawler.getMovies();
+        if (json != null)
+            return json;
+        else return "EmptyPage";
     }
 
+    @GET
+    @Path("title/{name}")
+    @Produces(MediaType.TEXT_PLAIN)
+    public String getItemOnName(@PathParam("name") String name) {
+        String json = webCrawler.getBasedOnName(name);
+        if (json != null)
+            return json;
+        else return "EmptyPage";
+    }
+
+    @GET
+    @Path("genre/{genre}")
+    @Produces(MediaType.TEXT_PLAIN)
+    public String getItemOnGenre(@PathParam("genre") String genre) {
+        String json = webCrawler.getBasedOnGenre(genre);
+        if (json != null)
+            return json;
+        else return "EmptyPage";
+    }
 }

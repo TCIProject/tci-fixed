@@ -2,6 +2,8 @@ import interfaceModel.Statistics;
 import org.junit.Before;
 import org.junit.Test;
 
+import static junit.framework.TestCase.assertSame;
+import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.*;
 
 /**
@@ -60,11 +62,11 @@ public class StatisticsTest {
         when(statistics.getNrOfpagesExplored()).thenReturn(nrOfPagesExplored);
         when(statistics.getSearchDepth()).thenReturn(searchDepth);
         // verify
-//        assertSame(statistics.getStrategyUsed(), algorithmUsed);
-//        assertSame(statistics.getRequestId(), requestId);
-//        assertEquals(statistics.getTimeElapsed(), timeElapsed, 0.0001);
-//        assertSame(statistics.getNrOfpagesExplored(), nrOfPagesExplored);
-//        assertSame(statistics.getSearchDepth(), searchDepth);
+        assertSame(statistics.getStrategyUsed(), algorithmUsed);
+        assertSame(statistics.getRequestId(), requestId);
+        assertEquals(statistics.getTimeElapsed(), timeElapsed, 0.0001);
+        assertSame(statistics.getNrOfpagesExplored(), nrOfPagesExplored);
+        assertSame(statistics.getSearchDepth(), searchDepth);
     }
 }
 

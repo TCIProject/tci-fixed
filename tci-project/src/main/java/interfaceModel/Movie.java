@@ -1,15 +1,21 @@
 package interfaceModel;
 
+import com.google.gson.Gson;
+
+import java.util.ArrayList;
+
 public interface Movie {
+    String getJSON();
+
     String getDirector();
 
     void setDirector(String director);
 
-    String[] getWrites();
+    ArrayList<String> getWriters();
 
-    void setWrites(String[] writes);
+    void setWriters(ArrayList<String> writers);
 
-    String[] getStars();
+    ArrayList<String> getStars();
 
-    void setStars(String[] stars);
+    void setStars(ArrayList<String> stars);
 }

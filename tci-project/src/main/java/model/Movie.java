@@ -8,6 +8,7 @@ import java.util.ArrayList;
  * This is a Book model class to serialize it JSON
  */
 public class Movie extends Item {
+public class Movie extends Item implements interfaceModel.Movie {
     private String director;
     private ArrayList<String> writers;
     private ArrayList<String> stars;

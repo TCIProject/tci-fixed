@@ -8,6 +8,9 @@ import javax.ws.rs.core.MediaType;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+/**
+ * Restful api
+ */
 @Path("api")
 public class API {
     private static final String BASE_URL = "http://i319728.hera.fhict.nl/";
@@ -27,6 +30,11 @@ public class API {
         return "Welcome";
     }
 
+    /**
+     * Mehtod returns music based on id
+     * @param id of music
+     * @return returns music or empty page
+     */
     @GET
     @Path("music/{id}")
     @Produces(MediaType.TEXT_PLAIN)
@@ -37,6 +45,11 @@ public class API {
         else return "EmptyPage";
     }
 
+    /**
+     * Method returns movie based on id
+     * @param id of movie
+     * @return returns movie or empty test
+     */
     @GET
     @Path("movie/{id}")
     @Produces(MediaType.TEXT_PLAIN)
@@ -44,9 +57,14 @@ public class API {
         String movie = webCrawler.getMovie(id);
         if (movie != null)
             return movie;
-        else return "EmptyPage";
+        else return "Empty Page";
     }
 
+    /**
+     * Method returns book based on id
+     * @param id of book
+     * @return returns book or empty page
+     */
     @GET
     @Path("book/{id}")
     @Produces(MediaType.TEXT_PLAIN)
@@ -54,9 +72,13 @@ public class API {
         String book = webCrawler.getBook(id);
         if (book != null)
             return book;
-        else return "EmptyPage";
+        else return "Empty Page";
     }
 
+    /**
+     * Method returns the entire collection of books
+     * @return json or empty page
+     */
     @GET
     @Path("book")
     @Produces(MediaType.TEXT_PLAIN)
@@ -64,19 +86,27 @@ public class API {
         String json =  webCrawler.getBooks();
         if (json != null)
             return json;
-        else return "EmptyPage";
+        else return "Empty Page";
     }
 
+    /**
+     * Method returns the entire collection of music
+     * @return json or empty page
+     */
     @GET
     @Path("music")
     @Produces(MediaType.TEXT_PLAIN)
-    public String getMusic() throws Exception {
+    public String getMusic() {
         String json = webCrawler.getMusic();
         if (json != null)
             return json;
-        else return "EmptyPage";
+        else return "Empty Page";
     }
 
+    /**
+     * Method returns all of the movies extracted from the website
+     * @return json
+     */
     @GET
     @Path("movie")
     @Produces(MediaType.TEXT_PLAIN)
@@ -84,9 +114,14 @@ public class API {
         String json = webCrawler.getMovies();
         if (json != null)
             return json;
-        else return "EmptyPage";
+        else return "Empty Page";
     }
 
+    /**
+     * Method gets items
+     * @param name title of the page
+     * @return json or empty page
+     */
     @GET
     @Path("title/{name}")
     @Produces(MediaType.TEXT_PLAIN)
@@ -94,9 +129,14 @@ public class API {
         String json = webCrawler.getBasedOnName(name);
         if (json != null)
             return json;
-        else return "EmptyPage";
+        else return "Empty Page";
     }
 
+    /**
+     * Method to get json from genre
+     * @param genre genre of the
+     * @return json or empty page
+     */
     @GET
     @Path("genre/{genre}")
     @Produces(MediaType.TEXT_PLAIN)
@@ -104,6 +144,6 @@ public class API {
         String json = webCrawler.getBasedOnGenre(genre);
         if (json != null)
             return json;
-        else return "EmptyPage";
+        else return "Empty Page";
     }
 }

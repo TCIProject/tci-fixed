@@ -26,7 +26,6 @@ public class WebCrawler {
     public WebCrawler(final URL startURL) {
         this.baseUrl = startURL.toString();
         this.links = new HashSet<>();
-        Book book =new Book();
         this.startTime = System.currentTimeMillis();
         depth = 0;
         pagesVisited = 0;

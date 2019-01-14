@@ -27,15 +27,15 @@ public class Node {
         return url;
     }
 
-    public void setUrl(URL url) {
-        this.url = url;
-    }
+//    public void setUrl(URL url) {
+//        this.url = url;
+//    }
 
     public Item getItem() {
         return item;
     }
 
-    public void setItem(Item item) {
-        this.item = item;
-    }
+//    public void setItem(Item item) {
+//        this.item = item;
+//    }
 }

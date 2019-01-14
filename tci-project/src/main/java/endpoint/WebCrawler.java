@@ -191,4 +191,10 @@ public class WebCrawler {
         return Collections.singleton(startURL);
     }
 
+//    public ArrayList<Statistics>setStatistics(URL url){
+//        ArrayList<Statistics> statistics = new ArrayList<>();
+//        long startTime = System.currentTimeMillis();
+//
+//        return statistics;
+//    }
 }

@@ -12,12 +12,12 @@ public class Book extends Item {
     private String publisher;
     private String ISBN;
 
-    public Book(int id, String title, Category category, String genre, String format, int year, ArrayList<String> authors, String publisher, String ISBN) {
-        super(id, title,category,genre,format,year);
-        this.authors = authors;
-        this.publisher = publisher;
-        this.ISBN = ISBN;
-    }
+//    public Book(int id, String title, Category category, String genre, String format, int year, ArrayList<String> authors, String publisher, String ISBN) {
+//        super(id, title,category,genre,format,year);
+//        this.authors = authors;
+//        this.publisher = publisher;
+//        this.ISBN = ISBN;
+//    }
 
     public Book(int id, String title, Category category) {
         super(id, title, category);
@@ -31,25 +31,25 @@ public class Book extends Item {
         return gson.toJson(this, Book.class);
     }
 
-    public ArrayList<String> getAuthors() {
-        return authors;
-    }
+//    public ArrayList<String> getAuthors() {
+//        return authors;
+//    }
 
     public void setAuthors(ArrayList<String> authors) {
         this.authors = authors;
     }
 
-    public String getPublisher() {
-        return publisher;
-    }
+//    public String getPublisher() {
+//        return publisher;
+//    }
 
     public void setPublisher(String publisher) {
         this.publisher = publisher;
     }
 
-    public String getISBN() {
-        return ISBN;
-    }
+//    public String getISBN() {
+//        return ISBN;
+//    }
 
     public void setISBN(String ISBN) {
         this.ISBN = ISBN;

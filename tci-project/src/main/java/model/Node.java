@@ -2,6 +2,10 @@ package model;
 
 import java.util.ArrayList;
 
+/**
+ * This class is going to contain the links of the website
+ * where the web crawler will go through and save them as nodes
+ */
 public class Node {
     private boolean isVisited;
     private Node parent;

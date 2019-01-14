@@ -1,5 +1,8 @@
 package model;
 
+/**
+ * This class will keep track of the statistics
+ */
 public class Statistics {
     private String algorithmUsed;
     private int requestId;

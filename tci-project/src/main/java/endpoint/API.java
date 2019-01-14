@@ -42,7 +42,7 @@ public class API {
         String music = webCrawler.getMusic(id);
         if (music != null)
             return music;
-        else return "EmptyPage";
+        else return "Empty Page";
     }
 
     /**

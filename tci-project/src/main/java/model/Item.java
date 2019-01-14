@@ -4,18 +4,53 @@ package model;
  * This class is a abstract class which will
  * contain items of Movie and Music and Tree
  */
-public abstract class Item {
+public class Item {
+    private int id;
+    private String title;
+    private Category category;
     private String genre;
     private String format;
-    private int date;
+    private int year;
 
-    public Item(String genre, String format, int date) {
+    public Item(int id, String title, Category category, String genre, String format, int year) {
+        this.id = id;
+        this.title = title;
+        this.category = category;
         this.genre = genre;
         this.format = format;
-        this.date = date;
+        this.year = year;
     }
 
-    public Item() {
+    public Item(int id, String title, Category category) {
+        this.id = id;
+        this.title = title;
+        this.category = category;
+    }
+
+    public Item() {}
+
+    public String getTitle() {
+        return title;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
     public String getGenre() {
@@ -34,11 +69,11 @@ public abstract class Item {
         this.format = format;
     }
 
-    public int getDate() {
-        return date;
+    public int getYear() {
+        return year;
     }
 
-    public void setDate(int date) {
-        this.date = date;
+    public void setYear(int year) {
+        this.year = year;
     }
 }

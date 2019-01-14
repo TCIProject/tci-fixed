@@ -23,6 +23,10 @@ public class WebCrawler {
     private ArrayList<Node> movies = new ArrayList<>();
     private String baseUrl;
 
+    /**
+     * Constructor used to construct urls
+     * @param startURL starting URL
+     */
     public WebCrawler(final URL startURL) {
         this.baseUrl = startURL.toString();
         this.links = new HashSet<>();
@@ -37,6 +41,10 @@ public class WebCrawler {
         }
     }
 
+    /**
+     * Goes through urls and searches and populates node
+     * @throws IOException
+     */
     private void goThroughLinks() throws IOException {
         for (URL link :links) {
             pagesVisited++;
@@ -57,6 +65,11 @@ public class WebCrawler {
         }
     }
 
+    /**
+     * @param url passed to set node
+     * @return populated node
+     * @throws IOException
+     */
     public Node populateNode(URL url) throws IOException {
         Document doc = Jsoup.connect(url.toString()).get();
         Elements elements = doc.getElementsByClass("media-details");
@@ -126,6 +139,9 @@ public class WebCrawler {
         return node;
     }
 
+    /**
+     * @param urls craws website and populates set with links
+     */
     private void crawl(final Set<URL> urls){
         urls.removeAll((this.links));
         if (!urls.isEmpty()) {
@@ -149,6 +165,10 @@ public class WebCrawler {
         }
     }
 
+    /**
+     * @param id passed id
+     * @return book with id
+     */
     public String getBook(int id) {
         for (Node node: books) {
             if (node.getUrl().toString().contains("?id="+id))
@@ -158,6 +178,10 @@ public class WebCrawler {
         return null;
     }
 
+    /**
+     * @param id passed id
+     * @return movie with id
+     */
     public String getMovie(int id) {
         for (Node node: movies) {
             if (node.getUrl().toString().contains("?id="+id))
@@ -167,6 +191,10 @@ public class WebCrawler {
         return null;
     }
 
+    /**
+     * @param id passed id
+     * @return music of with id
+     */
     public String getMusic(int id) {
         for (Node node: music) {
             if (node.getUrl().toString().contains("?id="+id))
@@ -176,6 +204,9 @@ public class WebCrawler {
         return null;
     }
 
+    /**
+     * @return all movies json
+     */
     public String getMovies() {
         StringBuilder json = new StringBuilder();
         for (Node node : movies) {
@@ -184,6 +215,9 @@ public class WebCrawler {
         return json.toString();
     }
 
+    /**
+     * @return all music json
+     */
     public String getMusic() {
         StringBuilder json = new StringBuilder();
         for (Node node : music) {
@@ -192,6 +226,9 @@ public class WebCrawler {
         return json.toString();
     }
 
+    /**
+     * @return all books json
+     */
     public String getBooks() {
         StringBuilder json = new StringBuilder();
         for (Node node : books) {
@@ -200,6 +237,11 @@ public class WebCrawler {
         return json.toString();
     }
 
+    /**
+     * Method used to search based on title name
+     * @param name with witch to find title
+     * @return json String
+     */
     public String getBasedOnName(String name) {
         StringBuilder json = new StringBuilder();
         for (Node node: books) {
@@ -220,6 +262,11 @@ public class WebCrawler {
         return json.toString();
     }
 
+    /**
+     * Method used to search based on genre
+     * @param genre with witch to find genre
+     * @return json String
+     */
     public String getBasedOnGenre(String genre) {
         String cap = genre.substring(0, 1).toUpperCase() + genre.substring(1);
         StringBuilder json = new StringBuilder();
@@ -241,6 +288,10 @@ public class WebCrawler {
         return json.toString();
     }
 
+    /**
+     * @param startURL parameter startingURL
+     * @return collection of set urls
+     */
     private Set<URL> initURLS(final URL startURL){
         return Collections.singleton(startURL);
     }

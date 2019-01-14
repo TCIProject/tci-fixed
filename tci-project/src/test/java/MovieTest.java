@@ -2,6 +2,8 @@ import model.Movie;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 import static junit.framework.TestCase.assertSame;
 import static org.mockito.Mockito.*;
 
@@ -12,8 +14,8 @@ import static org.mockito.Mockito.*;
 public class MovieTest {
 
     private String director;
-    private String[] writers;
-    private String[] stars;
+    private ArrayList<String> writers = new ArrayList<String>();
+    private ArrayList<String> stars = new ArrayList<String>();
     private Movie movie;
 
     /**
@@ -22,8 +24,10 @@ public class MovieTest {
     @Before
     public void setup() {
         // arrange
-        writers = new String[]{"William Goldman"};
-        stars = new String[]{"Ron Livingston", "Jennifer Aniston", "David Herman"};
+        writers.add("William Goldman");
+        stars.add("Ron Livingston");
+        stars.add("Jennifer Aniston");
+        stars.add("David Herman");
         director = "Mike Judge";
         movie = mock(Movie.class);
     }
@@ -36,13 +40,13 @@ public class MovieTest {
     @Test
     public void verifyMovieParametersInput(){
         // act
-//        movie.setDirector(director);
-//        movie.setWriters(writers);
-//        movie.setStars(stars);
-//        //verify
-//        verify(movie).setDirector(director);
-//        verify(movie).setWriters(writers);
-//        verify(movie).setStars(stars);
+        movie.setDirector(director);
+        movie.setWriters(writers);
+        movie.setStars(stars);
+        //verify
+        verify(movie).setDirector(director);
+        verify(movie).setWriters(writers);
+        verify(movie).setStars(stars);
     }
 
     /**
@@ -52,9 +56,9 @@ public class MovieTest {
     @Test
     public void verifyReturnOfMovie(){
         // act
-//        when(movie.getDirector()).thenReturn(director);
-//        when(movie.getWriters()).thenReturn(writers);
-//        when(movie.getStars()).thenReturn(stars);
+        when(movie.getDirector()).thenReturn(director);
+        when(movie.getWriters()).thenReturn(writers);
+        when(movie.getStars()).thenReturn(stars);
         // verify
         assertSame(movie.getDirector(), director);
         assertSame(movie.getWriters(), writers);

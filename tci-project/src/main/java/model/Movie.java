@@ -60,15 +60,15 @@ public class Movie extends Item {
         return gson.toJson(this, Movie.class);
     }
 
-//    public String getDirector() {
-//        return director;
-//    }
+    public String getDirector() {
+        return director;
+    }
 
-//    public ArrayList<String> getWriters() {
-//        return writers;
-//    }
+    public ArrayList<String> getWriters() {
+        return writers;
+    }
 
-//    public ArrayList<String> getStars() {
-//        return stars;
-//    }
+    public ArrayList<String> getStars() {
+        return stars;
+    }
 }

@@ -25,17 +25,17 @@ public class Item {
 
     public Item() {}
 
-//    public Item(int id, int depth, int pagesVisited, long timeElapsed, String title, Category category, String genre, String format, int year) {
-//        this.id = id;
-//        this.depth = depth;
-//        this.pagesVisited = pagesVisited;
-//        this.timeElapsed = timeElapsed;
-//        this.title = title;
-//        this.category = category;
-//        this.genre = genre;
-//        this.format = format;
-//        this.year = year;
-//    }
+    public Item(int id, int depth, int pagesVisited, long timeElapsed, String title, Category category, String genre, String format, int year) {
+        this.id = id;
+        this.depth = depth;
+        this.pagesVisited = pagesVisited;
+        this.timeElapsed = timeElapsed;
+        this.title = title;
+        this.category = category;
+        this.genre = genre;
+        this.format = format;
+        this.year = year;
+    }
 
     /**
      * Setters for the parameters

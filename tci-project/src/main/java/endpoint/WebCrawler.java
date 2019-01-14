@@ -136,6 +136,57 @@ public class WebCrawler {
         }
     }
 
+    public String getBook(int id) {
+        for (Node node: books) {
+            if (node.getUrl().toString().contains("?id="+id))
+                return ((Book)node.getItem()).getJSON();
+
+        }
+        return null;
+    }
+
+    public String getMovie(int id) {
+        for (Node node: movies) {
+            if (node.getUrl().toString().contains("?id="+id))
+                return ((Movie)node.getItem()).getJSON();
+
+        }
+        return null;
+    }
+
+    public String getMusic(int id) {
+        for (Node node: music) {
+            if (node.getUrl().toString().contains("?id="+id))
+                return ((Music)node.getItem()).getJSON();
+
+        }
+        return null;
+    }
+
+    public String getMovies() {
+        StringBuilder json = new StringBuilder();
+        for (Node node : movies) {
+            json.append(((Movie) node.getItem()).getJSON()).append("\n");
+        }
+        return json.toString();
+    }
+
+    public String getMusic() {
+        StringBuilder json = new StringBuilder();
+        for (Node node : music) {
+            json.append(((Music) node.getItem()).getJSON()).append("\n");
+        }
+        return json.toString();
+    }
+
+    public String getBooks() {
+        StringBuilder json = new StringBuilder();
+        for (Node node : books) {
+            json.append(((Book) node.getItem()).getJSON()).append("\n");
+        }
+        return json.toString();
+    }
+
     private Set<URL> initURLS(final URL startURL){
         return Collections.singleton(startURL);
     }

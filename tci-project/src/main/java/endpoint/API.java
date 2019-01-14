@@ -51,4 +51,25 @@ public class API {
         return book;
     }
 
+    @GET
+    @Path("book")
+    @Produces(MediaType.TEXT_PLAIN)
+    public String getBooks() {
+        return webCrawler.getBooks();
+    }
+
+    @GET
+    @Path("music")
+    @Produces(MediaType.TEXT_PLAIN)
+    public String getMusic() {
+        return webCrawler.getMusic();
+    }
+
+    @GET
+    @Path("movie")
+    @Produces(MediaType.TEXT_PLAIN)
+    public String getMovie() {
+        return webCrawler.getMovies();
+    }
+
 }

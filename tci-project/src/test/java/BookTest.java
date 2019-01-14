@@ -2,6 +2,8 @@ import interfaceModel.Book;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 import static junit.framework.TestCase.assertSame;
 import static org.mockito.Mockito.*;
 
@@ -10,7 +12,7 @@ import static org.mockito.Mockito.*;
  */
 public class BookTest {
 
-    private String[] array;
+    private ArrayList<String> array;
     private String isbn;
     private String publisher;
     private Book book;
@@ -21,7 +23,9 @@ public class BookTest {
     @Before
     public void setup() {
         // arrange
-        array = new String[] {"Hans, Mans"};
+        array = new ArrayList<>();
+        array.add("Hans");
+        array.add("Mans");
         isbn = "159";
         publisher = "Pesho";
         book = mock(Book.class);
@@ -56,5 +60,4 @@ public class BookTest {
         assertSame(book.getISBN(), isbn);
         assertSame(book.getAuthors(), array);
     }
-
 }

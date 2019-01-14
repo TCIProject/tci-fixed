@@ -2,6 +2,8 @@ import model.Movie;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 import static junit.framework.TestCase.assertSame;
 import static org.mockito.Mockito.*;
 
@@ -12,8 +14,8 @@ import static org.mockito.Mockito.*;
 public class MovieTest {
 
     private String director;
-    private String[] writers;
-    private String[] stars;
+    private ArrayList<String> writers = new ArrayList<String>();
+    private ArrayList<String> stars = new ArrayList<String>();
     private Movie movie;
 
     /**
@@ -22,8 +24,10 @@ public class MovieTest {
     @Before
     public void setup() {
         // arrange
-        writers = new String[]{"William Goldman"};
-        stars = new String[]{"Ron Livingston", "Jennifer Aniston", "David Herman"};
+        writers.add("William Goldman");
+        stars.add("Ron Livingston");
+        stars.add("Jennifer Aniston");
+        stars.add("David Herman");
         director = "Mike Judge";
         movie = mock(Movie.class);
     }

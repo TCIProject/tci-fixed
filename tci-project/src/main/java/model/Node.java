@@ -1,67 +1,50 @@
 package model;
 
-import java.util.ArrayList;
-
 /**
  * This class is going to contain the links of the website
  * where the web crawler will go through and save them as nodes
+ * together with general item
  */
+
+import java.net.URL;
+
 public class Node {
-    private boolean isVisited;
-    private Node parent;
-    private ArrayList<Node> nodes;
-    private String JSONString;
-    private String URLLink;
+    private URL url;
+    private Item item;
 
-    public Node(Node parent, String URLLink) {
-        this.parent = parent;
-        this.URLLink = URLLink;
+    /**
+     * Constructor for the Node Model
+     * @param url
+     * @param item
+     */
+    public Node(URL url, Item item) {
+        this.url = url;
+        this.item = item;
     }
 
-    public Node(Node parent, String JSONString, String URLLink) {
-        this.isVisited = false;
-        this.parent = parent;
-        this.JSONString = JSONString;
-        this.URLLink = URLLink;
+    public Node() {
     }
 
-    public void setVisited(boolean visited) {
-        isVisited = visited;
+    /**
+     * Setters for the parameters
+     */
+//    public void setUrl(URL url) {
+//        this.url = url;
+//    }
+
+//    public void setItem(Item item) {
+//        this.item = item;
+//    }
+
+    /**
+     * Getters for retrieving the values inside the parameters
+     * @return
+     */
+    public URL getUrl() {
+        return url;
     }
 
-    public void setParent(Node parent) {
-        this.parent = parent;
-    }
-
-    public void setNodes(ArrayList<Node> nodes) {
-        this.nodes = nodes;
-    }
-
-    public void setJSONString(String JSONString) {
-        this.JSONString = JSONString;
-    }
-
-    public void setURLLink(String URLLink) {
-        this.URLLink = URLLink;
-    }
-
-    public boolean isVisited() {
-        return isVisited;
-    }
-
-    public Node getParent() {
-        return parent;
-    }
-
-    public ArrayList<Node> getNodes() {
-        return nodes;
-    }
-
-    public String getJSONString() {
-        return JSONString;
-    }
-
-    public String getURLLink() {
-        return URLLink;
+    public Item getItem() {
+        return item;
     }
 }

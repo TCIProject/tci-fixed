@@ -1,3 +1,5 @@
+import endpoint.WebCrawler;
+
 import java.net.MalformedURLException;
 import java.net.URL;
 

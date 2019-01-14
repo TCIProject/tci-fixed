@@ -1,5 +1,4 @@
 import model.Node;
-import model.Tree;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

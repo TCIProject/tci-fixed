@@ -1,3 +1,4 @@
+import endpoint.WebCrawler;
 import org.junit.Test;
 
 import java.net.MalformedURLException;
